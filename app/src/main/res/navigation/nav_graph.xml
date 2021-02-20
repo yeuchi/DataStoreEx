@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ctyeung.datastoreex.MainFragment"
+        android:name="com.ctyeung.datastoreex.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/preferenceFragment"
-        android:name="com.ctyeung.datastoreex.PreferenceFragment"
+        android:name="com.ctyeung.datastoreex.ui.PreferenceFragment"
         android:label="fragment_preference"
         tools:layout="@layout/fragment_preference" >
 
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/protoFragment"
-        android:name="com.ctyeung.datastoreex.ProtoFragment"
+        android:name="com.ctyeung.datastoreex.ui.ProtoFragment"
         android:label="fragment_proto"
         tools:layout="@layout/fragment_proto" >
 
