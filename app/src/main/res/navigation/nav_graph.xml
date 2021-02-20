@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ctyeung.datastoreex.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_preferenceFragment"
+            app:destination="@id/preferenceFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_protoFragment"
+            app:destination="@id/protoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/preferenceFragment"
+        android:name="com.ctyeung.datastoreex.PreferenceFragment"
+        android:label="fragment_preference"
+        tools:layout="@layout/fragment_preference" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/protoFragment"
+        android:name="com.ctyeung.datastoreex.ProtoFragment"
+        android:label="fragment_proto"
+        tools:layout="@layout/fragment_proto" >
+
+    </fragment>
+</navigation>
