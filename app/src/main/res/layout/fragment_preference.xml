@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="left|center_vertical"
+        android:gravity="center|center_vertical"
         android:orientation="horizontal"
         android:padding="20dp">
 
@@ -36,7 +36,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
+        android:gravity="center|center_vertical"
         android:orientation="horizontal"
         android:padding="20dp">
 
