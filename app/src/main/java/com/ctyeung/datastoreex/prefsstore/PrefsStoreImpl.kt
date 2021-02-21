@@ -11,6 +11,9 @@ import androidx.datastore.preferences.core.preferencesKey
 import com.ctyeung.datastoreex.prefsstore.IPrefsStore
 import kotlinx.coroutines.flow.map
 
+/*
+ * this is essentially a repository
+ */
 class PrefsStoreImpl: IPrefsStore {
 
     private val STORE_NAME = "learning_data_store"

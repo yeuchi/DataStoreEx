@@ -11,9 +11,6 @@ import kotlinx.coroutines.launch
 
 class PreferenceViewModel (application: Application) : AndroidViewModel(application) {
 
-    /*
-     * Should wrap data source in repository
-     */
     private val prefStore:IPrefsStore
     val prefBoolean:LiveData<Boolean>
     val prefString:LiveData<String>

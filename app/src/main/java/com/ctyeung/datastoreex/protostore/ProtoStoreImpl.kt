@@ -7,6 +7,9 @@ import com.ctyeung.datastoreex.Developer
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+/*
+ * this is essentially a repository
+ */
 class ProtoStoreImpl : IProtoStore {
 
     private val protoStore: DataStore<Developer>
