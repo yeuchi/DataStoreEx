@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.createDataStore
 import com.ctyeung.datastoreex.Developer
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class ProtoStoreImpl : IProtoStore {
 
@@ -17,5 +19,25 @@ class ProtoStoreImpl : IProtoStore {
         )
     }
 
+    override fun getDeveloper(): Flow<Developer> {
+        return protoStore.data.map { it }
+    }
 
+    override suspend fun setDev(name:String) {
+        protoStore.updateData { it ->
+            it.toBuilder().setName(name).build()
+        }
+    }
+
+    override suspend fun setDev(id:Int) {
+        protoStore.updateData { it ->
+            it.toBuilder().setId(id).build()
+        }
+    }
+
+    override suspend fun setDev(flag:Boolean) {
+        protoStore.updateData { it ->
+            it.toBuilder().setIsRemote(flag).build()
+        }
+    }
 }

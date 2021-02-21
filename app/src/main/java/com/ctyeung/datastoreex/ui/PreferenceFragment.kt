@@ -19,8 +19,6 @@ class PreferenceFragment : Fragment() {
 
     private lateinit var model: PreferenceViewModel
     private lateinit var rdoGroup:RadioGroup
-    private lateinit var rdo1:RadioButton
-    private lateinit var rdo2:RadioButton
     private lateinit var root:View
     private lateinit var editText: EditText
     private lateinit var txtString:TextView
@@ -40,8 +38,6 @@ class PreferenceFragment : Fragment() {
 
         root?.let {
             rdoGroup = it.findViewById(R.id.rdo_group)
-            rdo1 = it.findViewById(R.id.rdo1)
-            rdo2 = root.findViewById(R.id.rdo2)
             txtBoolean = root.findViewById(R.id.txt_boolean)
 
             editText = root.findViewById(R.id.edit_string)
