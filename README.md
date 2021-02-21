@@ -17,6 +17,21 @@ Exercise Boolean and String storage.  Right (read-only) value is a returned from
 
 ### Proto
 
+Exercise define a custom type of Developer which is composed of 'Name' (String), 'Id' (Int), and 'Is_Remote' (Boolean).
+```
+syntax = "proto3";
+
+option java_package = "com.ctyeung.datastoreex";
+option java_multiple_files = true;
+
+message Developer {
+  string name = 1;
+  int32 id = 2;
+  bool is_remote = 3;
+}
+```
+<img width="200" src="https://user-images.githubusercontent.com/1282659/108633381-9499d700-7439-11eb-98bb-d38c604820c0.png"> <img width="200" src="https://user-images.githubusercontent.com/1282659/108633383-95cb0400-7439-11eb-9b6b-0c5004ca734c.png">
+
 # References
 
 1. DataStore Tutorial For Android: Getting Started by Luka Kordić, December 21, 2020 \
