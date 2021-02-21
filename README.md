@@ -19,8 +19,8 @@ Exercise Boolean and String storage.  Right (read-only) value is a returned from
 
 # References
 
-1. DataStore Tutorial For Android: Getting Started by Luka Kordić, December 21, 2020
+1. DataStore Tutorial For Android: Getting Started by Luka Kordić, December 21, 2020 \
 https://www.raywenderlich.com/18348259-datastore-tutorial-for-android-getting-started
 
-2. Google developers documentation
+2. Google developers documentation \
 https://developer.android.com/topic/libraries/architecture/datastore?gclid=CjwKCAiAg8OBBhA8EiwAlKw3krYbuBUsn2oONORxG0eUR46XKptzVTR1b3mEuc1EKO1OKCnZdKG-thoCEJEQAvD_BwE&gclsrc=aw.ds 
