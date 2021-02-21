@@ -11,8 +11,8 @@ JetPack DataStore support storage of 2 types.
 
 ### Preference
 
-Exercise Boolean and String storage.  Right (read-only) value is a returned from DataStore.
-
+Exercise Boolean and String storage.  Right (read-only) value is a returned from DataStore. \
+(a) app startup retrival   (b) update data   (c) refresh page - data retrival
 <img width="200" src="https://user-images.githubusercontent.com/1282659/108612490-e34e5f00-73ae-11eb-86d8-a392cd7888a7.png"> <img width="200" src="https://user-images.githubusercontent.com/1282659/108612491-e3e6f580-73ae-11eb-9ffd-bd9524caca7c.png"> <img width="200" src="https://user-images.githubusercontent.com/1282659/108612492-e3e6f580-73ae-11eb-9ab3-ce6c3273959c.png">
 
 ### Proto
