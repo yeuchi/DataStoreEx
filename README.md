@@ -24,3 +24,6 @@ https://www.raywenderlich.com/18348259-datastore-tutorial-for-android-getting-st
 
 2. Google developers documentation \
 https://developer.android.com/topic/libraries/architecture/datastore?gclid=CjwKCAiAg8OBBhA8EiwAlKw3krYbuBUsn2oONORxG0eUR46XKptzVTR1b3mEuc1EKO1OKCnZdKG-thoCEJEQAvD_BwE&gclsrc=aw.ds 
+
+3. Working with Proto DataStore, Code lab
+https://developer.android.com/codelabs/android-proto-datastore#0
