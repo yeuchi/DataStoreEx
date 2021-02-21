@@ -17,6 +17,7 @@ class PrefsStoreImpl: IPrefsStore {
     private lateinit var dataStore: DataStore<Preferences>
     val PREFS_NAME = "learning_companion_preferences"
     val BOOLEAN_FLAG = "boolean_flag"
+    val STRING_FLAG = "string_flag"
 
     constructor(context:Context) {
         dataStore = context.createDataStore( name = STORE_NAME,
@@ -24,13 +25,23 @@ class PrefsStoreImpl: IPrefsStore {
         )
     }
 
-    override fun isBooleanTrue(): Flow<Boolean> {
+    override fun getBoolean(): Flow<Boolean> {
         return dataStore.data.map { it[preferencesKey<Boolean>(BOOLEAN_FLAG)]?: false }
     }
 
     override suspend fun setBoolean(flag:Boolean) {
         dataStore.edit {
             it[preferencesKey<Boolean>(BOOLEAN_FLAG)] = flag
+        }
+    }
+
+    override fun getString(): Flow<String> {
+        return dataStore.data.map { it[preferencesKey<String>(STRING_FLAG)]?: "" }
+    }
+
+    override suspend fun setString(str:String) {
+        dataStore.edit {
+            it[preferencesKey<String>(STRING_FLAG)] = str
         }
     }
 }
