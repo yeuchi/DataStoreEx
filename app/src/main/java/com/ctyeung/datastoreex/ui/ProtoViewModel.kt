@@ -6,17 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.ctyeung.datastoreex.Developer
-import com.ctyeung.datastoreex.protostore.IProtoStore
-import com.ctyeung.datastoreex.protostore.ProtoStoreImpl
+import com.ctyeung.datastoreex.protostore.ProtoStoreRepository
 import kotlinx.coroutines.launch
 
 class ProtoViewModel (application: Application) : AndroidViewModel(application) {
 
-    private val protoStore:IProtoStore
+    private val protoStore:ProtoStoreRepository
     val protoDev:LiveData<Developer>
 
     init {
-        protoStore = ProtoStoreImpl(getApplication<Application>().applicationContext)
+        protoStore = ProtoStoreRepository(getApplication<Application>().applicationContext)
         protoDev = protoStore.getDeveloper().asLiveData()
     }
 

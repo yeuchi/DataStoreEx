@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.ctyeung.datastoreex";
+option java_multiple_files = true;
+
+message DataItem {
+  string name = 1;
+  int32 id = 2;
+  DataItem next = 3;
+}
+

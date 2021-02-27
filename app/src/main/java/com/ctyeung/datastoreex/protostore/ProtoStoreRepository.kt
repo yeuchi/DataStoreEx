@@ -10,35 +10,35 @@ import kotlinx.coroutines.flow.map
 /*
  * this is essentially a repository
  */
-class ProtoStoreImpl : IProtoStore {
+class ProtoStoreRepository {
 
     private val protoStore: DataStore<Developer>
     private val DATA_STORE_FILE_NAME = "dev_proto.pb"
 
     constructor(context: Context) {
         protoStore = context.createDataStore(
-            fileName = "dev_proto.pb",
+            fileName = DATA_STORE_FILE_NAME,
             serializer = DevProtoSeriaizer
         )
     }
 
-    override fun getDeveloper(): Flow<Developer> {
+    fun getDeveloper(): Flow<Developer> {
         return protoStore.data.map { it }
     }
 
-    override suspend fun setDev(name:String) {
+    suspend fun setDev(name:String) {
         protoStore.updateData { it ->
             it.toBuilder().setName(name).build()
         }
     }
 
-    override suspend fun setDev(id:Int) {
+    suspend fun setDev(id:Int) {
         protoStore.updateData { it ->
             it.toBuilder().setId(id).build()
         }
     }
 
-    override suspend fun setDev(flag:Boolean) {
+    suspend fun setDev(flag:Boolean) {
         protoStore.updateData { it ->
             it.toBuilder().setIsRemote(flag).build()
         }

@@ -5,18 +5,17 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.ctyeung.datastoreex.prefsstore.IPrefsStore
-import com.ctyeung.datastoreex.prefsstore.PrefsStoreImpl
+import com.ctyeung.datastoreex.prefsstore.PrefsStoreRepository
 import kotlinx.coroutines.launch
 
 class PreferenceViewModel (application: Application) : AndroidViewModel(application) {
 
-    private val prefStore:IPrefsStore
+    private val prefStore:PrefsStoreRepository
     val prefBoolean:LiveData<Boolean>
     val prefString:LiveData<String>
 
     init {
-        prefStore = PrefsStoreImpl(getApplication<Application>().applicationContext)
+        prefStore = PrefsStoreRepository(getApplication<Application>().applicationContext)
 
         prefBoolean = prefStore.getBoolean().asLiveData()
         prefString = prefStore.getString().asLiveData()
