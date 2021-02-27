@@ -17,6 +17,10 @@
         <action
             android:id="@+id/action_mainFragment_to_protoFragment"
             app:destination="@id/protoFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
 
     <fragment
@@ -32,6 +36,14 @@
         android:name="com.ctyeung.datastoreex.ui.ProtoFragment"
         android:label="fragment_proto"
         tools:layout="@layout/fragment_proto" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.ctyeung.datastoreex.ui.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
 
     </fragment>
 </navigation>
