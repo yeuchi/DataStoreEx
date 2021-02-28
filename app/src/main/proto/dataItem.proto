@@ -3,9 +3,11 @@ syntax = "proto3";
 option java_package = "com.ctyeung.datastoreex";
 option java_multiple_files = true;
 
+import "google/protobuf/any.proto";
+
 message DataItem {
-  string name = 1;
-  int32 id = 2;
-  DataItem next = 3;
+  repeated google.protobuf.Any list = 1;
 }
+
+
 

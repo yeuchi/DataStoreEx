@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
         val btn_list = activity?.findViewById(R.id.btn_list) as Button
         btn_list?.apply {
             setOnClickListener{
-                findNavController().navigate(R.id.action_mainFragment_to_protoFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_listFragment)
             }
         }
     }

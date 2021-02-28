@@ -1,4 +1,4 @@
-package com.ctyeung.datastoreex.prefsstore
+package com.ctyeung.datastoreex.protoList
 
 import androidx.datastore.core.CorruptionException
 import androidx.datastore.core.Serializer
