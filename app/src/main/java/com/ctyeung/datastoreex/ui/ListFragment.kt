@@ -113,20 +113,14 @@ class ListFragment : Fragment() {
     }
 
     private fun onChangeList(data: DataItem) {
-        data.numList[0]?.apply {
-            edit_text1.setText(this.toString())
-        }
-
-        data.numList[1]?.apply {
-            edit_text2.setText(this.toString())
-        }
-
-        data.numList[2]?.apply {
-            edit_text3.setText(this.toString())
-        }
-
-        data.numList[3]?.apply {
-            edit_text4.setText(this.toString())
+        for(i in 0..data.numCount-1){
+            val str = data.numList[i].toString()
+            when (i) {
+                0 -> edit_text1.setText(str)
+                1 -> edit_text2.setText(str)
+                2 -> edit_text3.setText(str)
+                3 -> edit_text4.setText(str)
+            }
         }
     }
 }
