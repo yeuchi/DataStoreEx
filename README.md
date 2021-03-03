@@ -34,6 +34,16 @@ message Developer {
 (a) entry/update DataStore  (b) read from DataStore (right column) \
 <img width="200" src="https://user-images.githubusercontent.com/1282659/108633381-9499d700-7439-11eb-98bb-d38c604820c0.png"> <img width="200" src="https://user-images.githubusercontent.com/1282659/108633383-95cb0400-7439-11eb-9b6b-0c5004ca734c.png">
 
+### Proto - List
+Message variable type defined as repeated for N length List.
+```
+message DataItem {
+  repeated int32 num = 1;
+}
+```
+<img width="200" src="https://user-images.githubusercontent.com/1282659/109855634-282f8c80-7c1e-11eb-9b49-f124fab84155.png">
+<img width="200" src="https://user-images.githubusercontent.com/1282659/109855636-282f8c80-7c1e-11eb-8da0-e617752ee107.png">
+
 # References
 
 1. DataStore Tutorial For Android: Getting Started by Luka Kordić, December 21, 2020 \
