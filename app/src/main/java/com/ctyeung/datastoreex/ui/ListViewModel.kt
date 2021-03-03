@@ -19,9 +19,9 @@ class ListViewModel (application: Application) : AndroidViewModel(application) {
         list = protoListStore.getDataItem().asLiveData()
     }
 
-    fun setDataItem(index:Int, string:String) {
+    fun setDataItem(index:Int, num:Int) {
         viewModelScope.launch {
-            protoListStore.setDataItem(index, string)
+            protoListStore.setDataItem(index, num)
         }
     }
 }

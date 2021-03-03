@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ctyeung.datastoreex.DataItem
 import com.ctyeung.datastoreex.R
+import java.lang.Exception
 
 class ListFragment : Fragment() {
 
@@ -52,28 +53,56 @@ class ListFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                model.setDataItem(0, s.toString())
+                var num = 0
+                try{
+                    num = s.toString().toInt()
+                    model.setDataItem(0, num)
+                }
+                catch (ex:Exception){
+
+                }
             }
         })
         edit_text2.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                model.setDataItem(1, s.toString())
+                var num = 0
+                try{
+                    num = s.toString().toInt()
+                    model.setDataItem(1, num)
+                }
+                catch (ex:Exception){
+
+                }
             }
         })
         edit_text3.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                model.setDataItem(2, s.toString())
+                var num = 0
+                try{
+                    num = s.toString().toInt()
+                    model.setDataItem(2, num)
+                }
+                catch (ex:Exception){
+
+                }
             }
         })
         edit_text4.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                model.setDataItem(3, s.toString())
+                var num = 0
+                try{
+                    num = s.toString().toInt()
+                    model.setDataItem(3, num)
+                }
+                catch (ex:Exception){
+
+                }
             }
         })
     }
@@ -84,6 +113,12 @@ class ListFragment : Fragment() {
     }
 
     private fun onChangeList(data: DataItem) {
+        data.numList[0]?.apply {
+            edit_text1.setText(this.toString())
+        }
 
+        data.numList[1]?.apply {
+            edit_text2.setText(this.toString())
+        }
     }
 }

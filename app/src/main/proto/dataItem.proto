@@ -6,7 +6,7 @@ option java_multiple_files = true;
 import "google/protobuf/any.proto";
 
 message DataItem {
-  repeated google.protobuf.Any list = 1;
+  repeated int32 num = 1;
 }
 
 

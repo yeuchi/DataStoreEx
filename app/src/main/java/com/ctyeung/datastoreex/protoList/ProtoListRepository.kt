@@ -32,9 +32,14 @@ class ProtoListRepository {
         return protoList.data.map {it}
     }
 
-    suspend fun setDataItem(index:Int, string:String) {
-//        protoList.updateData {
-//            it.toBuilder().putList (index.toString(), string).build()
-//        }
+    suspend fun setDataItem(index:Int, num:Int) {
+        protoList.updateData {
+            if(index > it.toBuilder().numCount-1) {
+                it.toBuilder().addNum(num).build()
+            }
+            else {
+                it.toBuilder().setNum(index, num).build()
+            }
+        }
     }
 }
