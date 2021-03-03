@@ -45,6 +45,9 @@ class ListFragment : Fragment() {
         return root
     }
 
+    /*
+     * replace with recursion or recyclerViews
+     */
     private fun initListeners() {
         /*
          * TODO consolidate this when working
