@@ -35,7 +35,7 @@ message Developer {
 <img width="200" src="https://user-images.githubusercontent.com/1282659/108633381-9499d700-7439-11eb-98bb-d38c604820c0.png"> <img width="200" src="https://user-images.githubusercontent.com/1282659/108633383-95cb0400-7439-11eb-9b6b-0c5004ca734c.png">
 
 ### Proto - List
-Message variable type defined as repeated for N length List.
+variable length List<Int> is accomplished with a 'repeated' attribute.
 ```
 message DataItem {
   repeated int32 num = 1;
