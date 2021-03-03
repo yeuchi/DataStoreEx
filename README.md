@@ -7,7 +7,7 @@ JetPack DataStore support storage of 2 types.
 - Preference: Key value pair (upgrade of existing sharedPreference)
 - Proto: Custom schema
 
-<img width="200" src="https://user-images.githubusercontent.com/1282659/108612489-daf62400-73ae-11eb-9119-139b95923ba0.png">
+<img width="200" src="https://user-images.githubusercontent.com/1282659/109855636-282f8c80-7c1e-11eb-8da0-e617752ee107.png">
 
 ### Preference
 
@@ -42,7 +42,7 @@ message DataItem {
 }
 ```
 <img width="200" src="https://user-images.githubusercontent.com/1282659/109855634-282f8c80-7c1e-11eb-9b49-f124fab84155.png">
-<img width="200" src="https://user-images.githubusercontent.com/1282659/109855636-282f8c80-7c1e-11eb-8da0-e617752ee107.png">
+
 
 # References
 
