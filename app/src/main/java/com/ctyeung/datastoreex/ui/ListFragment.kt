@@ -120,5 +120,13 @@ class ListFragment : Fragment() {
         data.numList[1]?.apply {
             edit_text2.setText(this.toString())
         }
+
+        data.numList[2]?.apply {
+            edit_text3.setText(this.toString())
+        }
+
+        data.numList[3]?.apply {
+            edit_text4.setText(this.toString())
+        }
     }
 }
