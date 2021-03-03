@@ -8,8 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ctyeung.datastoreex.DataItem
 import com.ctyeung.datastoreex.R
 import java.lang.Exception
@@ -17,15 +22,13 @@ import java.lang.Exception
 class ListFragment : Fragment() {
 
     private lateinit var model: ListViewModel
-    private lateinit var edit_text1:EditText
-    private lateinit var edit_text2:EditText
-    private lateinit var edit_text3:EditText
-    private lateinit var edit_text4:EditText
+    private lateinit var recycler_view:RecyclerView
     private lateinit var root:View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         model = ViewModelProvider(this).get(ListViewModel::class.java)
+
     }
 
     override fun onCreateView(
@@ -36,11 +39,8 @@ class ListFragment : Fragment() {
         root = inflater.inflate(R.layout.fragment_list, container, false)
 
         root?.let {
-            edit_text1 = root.findViewById(R.id.edit_text1)
-            edit_text2 = root.findViewById(R.id.edit_text2)
-            edit_text3 = root.findViewById(R.id.edit_text3)
-            edit_text4 = root.findViewById(R.id.edit_text4)
-            initListeners()
+            recycler_view = root.findViewById<RecyclerView>(R.id.recycler_view)
+            recycler_view.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         }
         return root
     }
@@ -48,66 +48,11 @@ class ListFragment : Fragment() {
     /*
      * replace with recursion or recyclerViews
      */
-    private fun initListeners() {
+    private fun initListeners(editText: EditText) {
         /*
          * TODO consolidate this when working
          */
-        edit_text1.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var num = 0
-                try{
-                    num = s.toString().toInt()
-                    model.setDataItem(0, num)
-                }
-                catch (ex:Exception){
 
-                }
-            }
-        })
-        edit_text2.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var num = 0
-                try{
-                    num = s.toString().toInt()
-                    model.setDataItem(1, num)
-                }
-                catch (ex:Exception){
-
-                }
-            }
-        })
-        edit_text3.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var num = 0
-                try{
-                    num = s.toString().toInt()
-                    model.setDataItem(2, num)
-                }
-                catch (ex:Exception){
-
-                }
-            }
-        })
-        edit_text4.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var num = 0
-                try{
-                    num = s.toString().toInt()
-                    model.setDataItem(3, num)
-                }
-                catch (ex:Exception){
-
-                }
-            }
-        })
     }
 
     override fun onResume() {
@@ -115,15 +60,17 @@ class ListFragment : Fragment() {
         model.list.observe(this, Observer(::onChangeList) )
     }
 
+    var updateData : (Int, Int) -> Unit = {
+        index:Int,
+        num:Int ->
+        model.setDataItem(index, num)
+    }
+
     private fun onChangeList(data: DataItem) {
-        for(i in 0..data.numCount-1){
-            val str = data.numList[i].toString()
-            when (i) {
-                0 -> edit_text1.setText(str)
-                1 -> edit_text2.setText(str)
-                2 -> edit_text3.setText(str)
-                3 -> edit_text4.setText(str)
-            }
-        }
+        var list = data.numList.toMutableList()
+        list.add(0)
+        val adapter = ListAdapter(list, updateData)
+        recycler_view.adapter = adapter
+        recycler_view.hasFixedSize()
     }
 }
