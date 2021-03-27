@@ -21,6 +21,10 @@
         <action
             android:id="@+id/action_mainFragment_to_listFragment"
             app:destination="@id/listFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
 
     <fragment
@@ -44,6 +48,14 @@
         android:name="com.ctyeung.datastoreex.ui.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.ctyeung.datastoreex.ui.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
 
     </fragment>
 </navigation>

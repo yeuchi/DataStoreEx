@@ -24,7 +24,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="linkedlist"
+        android:text="list"
         android:id="@+id/btn_list"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="map"
+        android:id="@+id/btn_map"/>
 
 </LinearLayout>

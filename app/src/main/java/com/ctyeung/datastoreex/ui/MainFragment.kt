@@ -46,5 +46,12 @@ class MainFragment : Fragment() {
                 findNavController().navigate(R.id.action_mainFragment_to_listFragment)
             }
         }
+
+        val btn_map = activity?.findViewById(R.id.btn_map) as Button
+        btn_map?.apply {
+            setOnClickListener{
+                findNavController().navigate(R.id.action_mainFragment_to_mapFragment)
+            }
+        }
     }
 }
