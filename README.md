@@ -52,6 +52,11 @@ message Record {
 ```
 <img width="200" src="https://user-images.githubusercontent.com/1282659/112736202-dcbb8600-8f1e-11eb-8044-526aefd3e81c.png">
 
+# Android Studio 4.1 Release
+
+# Device
+Samsung S9 Galaxy phone.
+
 # References
 
 1. DataStore Tutorial For Android: Getting Started by Luka Kordić, December 21, 2020 \
